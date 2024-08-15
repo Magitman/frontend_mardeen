@@ -1,0 +1,110 @@
+<!-- You forgot to add this stylesheet!!! -->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<!-- <h1 class="dashboard-title">Dashboard</h1> -->
+
+<mat-grid-list cols="4" rowHeight="2:1" gutterSize="60px">
+  <!-- First Row -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>📈 Avg Temp</mat-card-title>
+      <mat-card-content>
+        <p>Value: {{averageTemperature.toFixed(1)}}</p>
+        <p>📊 Average temperature inside bins</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>📉 Avg Fill Level</mat-card-title>
+      <mat-card-content>
+        <p>Value: {{averageFillLevel.toFixed(1)}}</p>
+        <p>💡 Average fill level</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>💼 Avg Air Temp</mat-card-title>
+      <mat-card-content>
+        <p>Value: {{averageAirTemp.toFixed(1)}}</p>
+        <p>🚀 Average outisde air temperature</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-icon">
+          @if (lastPrecipitation < 1) {
+            <img src="/img/sun.png" alt="Sun Icon" width="60px" height="60px">
+
+
+          } @else if (lastPrecipitation > 1) {
+            <img src="/img/rain.png" alt="Rain Icon" width="60px" height="60px">
+
+          }
+        </span>
+      </div>
+      <mat-card-content>
+        <p class="kpi-title">Last reported precipitation</p>
+        <p class="kpi-value">{{lastPrecipitation}}</p>
+        <p class="kpi-update"><span class="update-icon">⏰</span> just updated</p>
+      </mat-card-content>
+    </mat-card>
+    
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<mat-grid-list cols="4" rowHeight="1:1">
+  <!-- First Row -->
+  <mat-grid-tile colspan="2">
+    <canvas id="myChart" width="700" height="700"></canvas>
+  </mat-grid-tile>
+  
+  <mat-grid-tile colspan="2">
+    <canvas id="canvas" width="700" height="700"></canvas>
+    <!-- <canvas id="myChart2" width="400" height="400"></canvas> -->
+  </mat-grid-tile>
+  
+  <!-- Second Row -->
+   <br>
+   <br>
+  <mat-grid-tile colspan="4">
+    <div class="map-container">
+      <div class="map-frame">
+        <div id="map"></div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  
+  <!-- Third Row -->
+  <mat-grid-tile colspan="2">
+    <!-- <div id="myDiv"></div> -->
+    optimal path
+    <!-- <canvas id="myChart3" width="400" height="400"></canvas> -->
+  </mat-grid-tile>
+  
+  <mat-grid-tile colspan="2">
+    optimal path
+  </mat-grid-tile>
+</mat-grid-list>
+<!--  -->
+
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Select Field</mat-label>
+  <mat-select [(value)]="selectedField" (selectionChange)="updatePlot()">
+    <mat-option *ngFor="let field of fields" [value]="field">
+      {{ field }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<!-- @if (selectedField) {
+  <p>Value: {{ selectedFieldValue }}</p>
+} -->
+
+<div id="myDiv"></div>

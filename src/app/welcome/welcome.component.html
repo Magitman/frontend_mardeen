@@ -1,0 +1,80 @@
+<div class="page-container">
+  <!-- Header Section -->
+  <header class="header">
+    <figure class="header-content">
+      <img
+        src="/img/homepagebins3.png"
+        class="zoom-out-image"
+        width="auto"
+        height="auto"
+      />
+      <figcaption>
+        <h2 class="typewriter">Welcome to Urban Waste Management</h2>
+        <p class="typewriter">
+          Your go-to solution for efficient waste management
+        </p>
+      </figcaption>
+    </figure>
+  </header>
+
+  <!-- add link to each page -->
+  <div class="cards-container">
+    <div
+      [routerLink]="['/dashboard']"
+      routerLinkActive="active-link"
+      class="card"
+    >
+      <a class="icon">📊</a>
+      <h2>Dashboard</h2>
+      <p>
+        Get relevant information from bins data and display all KPIs through
+        interactive and tailored dashboards, to support your decision-making
+        processes.
+      </p>
+    </div>
+    <div [routerLink]="['/alarms']" routerLinkActive="active-link" class="card">
+      <a class="icon">🖥️</a>
+      <h2>Live Monitoring</h2>
+      <p>Keep the situation under control!</p>
+    </div>
+    <div
+      [routerLink]="['/machine-learning']"
+      routerLinkActive="active-link"
+      class="card"
+    >
+      <a class="icon">🧮</a>
+      <h2>Other informations</h2>
+      <p>Here!</p>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <!-- <div class="search-bar">
+    <input type="text" placeholder="Search..." />
+    <button type="button">Search</button>
+  </div> -->
+
+  <!-- Announcements Section -->
+  <!-- <section class="announcements">
+    <h2>Latest Announcements</h2>
+    <ul>
+      <li>New feature update: Real-time monitoring</li>
+      <li>System maintenance scheduled for next week</li>
+      <li>Welcome our new users from XYZ company</li>
+    </ul>
+  </section> -->
+
+  <br />
+  <br />
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2024 MardeenAndrew². All rights reserved.</p>
+      <!-- <nav class="footer-nav">
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav> -->
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,40 @@
+<div class="app-container">
+  <mat-toolbar color="primary" class="navbar-container">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="logo-title">
+      <span style="font-weight:bold;">Urban Waste Management</span>  
+      &ensp;&ensp;&ensp;&ensp;
+    <img src="/img/otherlogo3.png" alt="Logo" class="logo" width="60" height="50">
+
+  </div>
+  </mat-toolbar>
+  
+  <div class="main-container">
+    <mat-drawer-container class="go-container" autosize>
+      <mat-drawer #drawer class="go-sidenav" mode="side" opened="true">
+        <img src="/img/recycle-bin.png" alt="Logo" class="logo2" width="100" height="100">
+        <mat-nav-list>
+  
+          <a mat-list-item routerLink="/welcome" routerLinkActive="active-link">
+            <mat-icon>home</mat-icon> 
+            Home</a>
+          <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link">
+            <mat-icon>dashboard</mat-icon> 
+            Dashboard</a>
+          <a mat-list-item routerLink="/alarms" routerLinkActive="active-link">
+            <mat-icon>alarm</mat-icon> 
+            Alarms
+          </a>
+          <!-- <a mat-list-item routerLink="/settings" routerLinkActive="active-link">
+            <mat-icon>settings</mat-icon> 
+            Settings</a> -->
+        </mat-nav-list>
+      </mat-drawer>
+    </mat-drawer-container>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

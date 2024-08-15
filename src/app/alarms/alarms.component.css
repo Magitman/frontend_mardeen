@@ -1,0 +1,131 @@
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 320px; /* Margin to make space for the fixed sidebar */
+  padding: 20px; /* Adds padding around the main content */
+  overflow-y: auto; /* Allows scrolling if content overflows vertically */
+}
+
+/* CONTENT STYLES */
+.content {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width for the content area */
+  padding: 20px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* TABLE CONTAINER */
+.table-container {
+  width: 100%; /* Full width for the table container */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  margin-top: 2px; /* Add spacing at the top */
+}
+
+/* TAB GROUP */
+.tab-group {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* CARD CONTAINER */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align cards */
+  width: 100%;
+}
+
+/* CARD WRAPPER */
+.card-wrapper {
+  width: 300px; /* Fixed width for cards */
+  margin: 10px; /* Margin around cards */
+  padding: 10px; /* Padding inside card wrapper */
+}
+
+/* CARD STYLING */
+.mat-card {
+  background-color: #9fb1c9;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners for better aesthetics */
+  align-items: center;
+}
+
+.mat-card-content {
+  color: #e8f0f3;
+  text-align: center;
+}
+
+/* TOOLTIP */
+.mat-tooltip {
+  background-color: yellow; /* Replace with your desired background color */
+  color: yellow; /* Replace with your desired text color */
+}
+
+/* STATUS STYLING */
+.ok {
+  background: linear-gradient(to bottom, #1a6c1a, #238823);
+}
+
+.stop {
+  background: linear-gradient(to bottom, #b22222, #8b0000);
+}
+
+.quasi {
+  background: linear-gradient(to bottom, #ff9100c4, #FF9D00);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0; /* Remove margin for smaller screens */
+  }
+
+  .content {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .card-wrapper {
+    width: 90%; /* Adjust card width for smaller screens */
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.title {
+  color: #333;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.subtitle {
+  color: #ffd700;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.info {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  text-align: left;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.info p {
+  margin: 0;
+}

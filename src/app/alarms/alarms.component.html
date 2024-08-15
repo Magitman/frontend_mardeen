@@ -1,0 +1,111 @@
+<div class="main-content">
+  <div class="content">
+    <div class="tab-group">
+      <div class="col-md-12">
+        <h2 class="title" style="color: #333; text-align: center">
+          LIVE MONITORING
+        </h2>
+        <p class="info">
+          <b>Info about the bins in the system.</b> <br />
+          <i>Click on a bin name to get details </i><br />
+          🟥 fill level is above 80<br />
+          🟧 fill level is between 70 and 80<br />
+          🟩 fill level is under 70
+        </p>
+
+        <div class="card-container">
+          <div *ngFor="let bin of bins" class="card-wrapper">
+            <mat-card
+              class="card"
+              [ngClass]="{
+                ok: bin.fillLevel <= 70 || bin.fillLevel === 0,
+                stop: bin.fillLevel > 80,
+                quasi: bin.fillLevel > 65 && bin.fillLevel < 80
+              }"
+            >
+              <mat-card-content
+                class="card-content"
+                matTooltip="Last timestamp: {{ bin.lastEdit }}"
+              >
+                <span class="md-headline">
+                  <font color="white" size="5">
+                    <strong>
+                      <a
+                        style="color: #000000; font-size: 6; cursor: pointer"
+                        (click)="openDialog(bin)"
+                        >{{ bin.id }}</a
+                      >
+                    </strong>
+                    <button
+                      style="margin-left: 50px"
+                      (click)="exportBin(bin.id)"
+                    >
+                      <mat-icon>download</mat-icon>
+                    </button>
+                  </font>
+                </span>
+                <br />
+                <span class="md-card-content"
+                  ><font color="white" size="3.5">Fill level:</font></span
+                ><br />
+                <span class="md-card-content"
+                  ><font color="black" size="4.5"
+                    ><strong>{{
+                      bin.fillLevel | number : "1.2-2"
+                    }}</strong></font
+                  ></span
+                >
+                <br />
+                <span class="md-card-content"
+                  ><font color="white" size="3.5">Battery:</font></span
+                ><br />
+                <span class="md-card-content"
+                  ><font color="black" size="4.5"
+                    ><strong>{{ bin.battery | number : "1.2-2" }}</strong></font
+                  ></span
+                >
+                <br />
+                <span class="md-card-content"
+                  ><font color="white" size="3.5">Temperature:</font></span
+                ><br />
+                <span class="md-card-content"
+                  ><font color="black" size="4.5"
+                    ><strong>{{
+                      bin.temperature | number : "1.2-2"
+                    }}</strong></font
+                  ></span
+                >
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <button
+            (click)="exportBins()"
+            style="margin-bottom: 20px; font-size: larger"
+          >
+            <mat-icon>download</mat-icon>Download all bins data
+          </button>
+          <mat-table class="mat-elevation-z8" [dataSource]="bins">
+            <!-- Dynamic column headers -->
+            <ng-container
+              *ngFor="let column of columnsToDisplay"
+              [matColumnDef]="column"
+            >
+              <th mat-header-cell *matHeaderCellDef>
+                {{ column | titlecase }}
+              </th>
+              <td mat-cell *matCellDef="let item">{{ item[column] }}</td>
+            </ng-container>
+
+            <!-- Header row -->
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <!-- Data rows -->
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+          </mat-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
