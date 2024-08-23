@@ -60,7 +60,7 @@
 <mat-grid-list cols="4" rowHeight="1:1">
   <!-- First Row -->
   <mat-grid-tile colspan="2">
-    <div id="myChart-loading" class="loading" *ngIf="bins.length !== 0">
+    <div id="myChart-loading" class="loading" *ngIf="bins.length === 0">
       <div class="spinner"></div>
       <p>Loading data...</p>
     </div>
