@@ -179,7 +179,7 @@ mat-card-content p:first-child {
 }
 
 /* LOADING DATA */
-.loading {
+/*.loading {
   position: absolute;
   width: 100%;
   display: flex;
@@ -225,4 +225,4 @@ mat-card-content p:first-child {
 @keyframes rotation {
   from {transform: rotate(0deg);}
   to {transform: rotate(359deg);}
-}
+}*/
