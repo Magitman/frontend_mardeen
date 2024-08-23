@@ -60,42 +60,31 @@
 <mat-grid-list cols="4" rowHeight="1:1">
   <!-- First Row -->
   <mat-grid-tile colspan="2">
-    <div id="myChart-loading" class="loading">
-      <div class="spinner"></div>
-      <p>Loading data...</p>
-    </div>
     <canvas id="myChart" width="700" height="700"></canvas>
   </mat-grid-tile>
   
   <mat-grid-tile colspan="2">
-    <div id="canvas-loading" class="loading">
-      <div class="spinner"></div>
-      <p>Loading data...</p>
-    </div>
-    <canvas id="canvas" width="700" height="700"></canvas>
+    <div id="map"></div>
+
     <!-- <canvas id="myChart2" width="400" height="400"></canvas> -->
   </mat-grid-tile>
   
   <!-- Second Row -->
    <br>
    <br>
-  <mat-grid-tile colspan="4">
-    <div class="map-container">
-      <div class="map-frame">
-        <div id="map"></div>
+
+  <!-- Third Row -->
+  <mat-grid-tile colspan="2" >
+    
+    <div >
+      <div style="height: 400px;">
+        <canvas id="canvas" width="700" height="600"></canvas>
       </div>
     </div>
   </mat-grid-tile>
   
-  <!-- Third Row -->
   <mat-grid-tile colspan="2">
-    <!-- <div id="myDiv"></div> -->
-    optimal path
-    <!-- <canvas id="myChart3" width="400" height="400"></canvas> -->
-  </mat-grid-tile>
-  
-  <mat-grid-tile colspan="2">
-    optimal path
+    <div id="optPathMap" style="height: 400px;"></div>
   </mat-grid-tile>
 </mat-grid-list>
 <!--  -->
