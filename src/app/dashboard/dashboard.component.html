@@ -60,10 +60,18 @@
 <mat-grid-list cols="4" rowHeight="1:1">
   <!-- First Row -->
   <mat-grid-tile colspan="2">
+    <div id="myChart-loading" class="loading">
+      <div class="spinner"></div>
+      <p>Loading data...</p>
+    </div>
     <canvas id="myChart" width="700" height="700"></canvas>
   </mat-grid-tile>
   
   <mat-grid-tile colspan="2">
+    <div id="canvas-loading" class="loading">
+      <div class="spinner"></div>
+      <p>Loading data...</p>
+    </div>
     <canvas id="canvas" width="700" height="700"></canvas>
     <!-- <canvas id="myChart2" width="400" height="400"></canvas> -->
   </mat-grid-tile>

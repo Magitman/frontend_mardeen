@@ -99,7 +99,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   getObjectKeys(obj: any): string[] {
-    return Object.keys(obj);
+    return Object.keys(obj ?? {});
   }
 
   // to get the value of the selected field
@@ -247,6 +247,15 @@ export class DashboardComponent implements AfterViewInit {
 
   Barplot(): void {
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
+    const loading = document.getElementById('myChart-loading') as HTMLDivElement;
+
+    if (this.bins.length === 0) {
+      loading.style.visibility='visible'
+      return;
+    } else {
+      loading.style.visibility='hidden'
+    }
+    
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -274,6 +283,14 @@ export class DashboardComponent implements AfterViewInit {
     // const ctx = document.getElementById('myChart2') as HTMLCanvasElement;
     const times = this.pedestrian.map(record => new Date(record.lastEdit).toLocaleTimeString());    
     const numVisitors = this.pedestrian.map(record => Number(record.numVisitors));
+
+    const loading = document.getElementById('canvas-loading') as HTMLDivElement;
+    if (this.bins.length === 0) {
+      loading.style.visibility='visible'
+      return;
+    } else {
+      loading.style.visibility='hidden'
+    }
 
     this.chart = new Chart('canvas', {
       type: 'line',
