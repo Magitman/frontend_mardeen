@@ -28,6 +28,7 @@
     "angular-plotly.js": "^5.2.2",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
+    "dsh": "file:",
     "leaflet": "^1.9.4",
     "plotly.js-dist-min": "^2.33.0",
     "rxjs": "~7.8.0",
