@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+import { Component } from "@angular/core";
+import { RouterOutlet, RouterLink, RouterLinkActive } from "@angular/router";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule } from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { CommonModule } from "@angular/common";
 
-import { DialogComponent } from './dialog/dialog.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AlarmsComponent } from './alarms/alarms.component';
-import { DataService } from './data.service';
-import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from "./dialog/dialog.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AlarmsComponent } from "./alarms/alarms.component";
+import { DataService } from "./data.service";
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogActions,
+  MatDialogContent,
+  MatDialogClose,
+} from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [
     CommonModule,
@@ -31,13 +37,21 @@ import { MatDialogModule, MatDialog } from '@angular/material/dialog';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDialogActions,
+    MatDialogContent,
+    MatDialogClose
   ],
   providers: [DataService, MatDialog],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'dsh';
+  constructor(public dialog: MatDialog) {}
+  title = "dsh";
   showFiller = false;
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
 }
