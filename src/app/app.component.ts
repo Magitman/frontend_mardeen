@@ -12,16 +12,10 @@ import { DialogComponent } from "./dialog/dialog.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AlarmsComponent } from "./alarms/alarms.component";
 import { DataService } from "./data.service";
-import {
-  MatDialog,
-  MatDialogModule,
-  MatDialogActions,
-  MatDialogContent,
-  MatDialogClose,
-} from "@angular/material/dialog";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
@@ -37,10 +31,7 @@ import {
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule,
-    MatDialogActions,
-    MatDialogContent,
-    MatDialogClose
+    MatDialogModule
   ],
   providers: [DataService, MatDialog],
   templateUrl: "./app.component.html",
